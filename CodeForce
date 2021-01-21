@@ -1,0 +1,24 @@
+a = list(map(int,input().split()))
+a = sorted(a)
+print(a)
+n=len(a)
+bolshe=1
+maximalno=1
+vsegoBashen=1
+for i in range (n-1):
+    if a[i]<=0 or a[i-1]<=0 or a[i+1]<=0:
+        print("Error")
+        bolshe = 0
+        maximalno = 0
+        vsegoBashen = 0
+
+        break
+
+    elif a[i]==a[i+1]:
+        bolshe+=1
+        if maximalno<bolshe:
+            maximalno=bolshe
+    elif a[i]<a[i+1]:
+        bolshe=1
+        vsegoBashen+=1
+print(maximalno,vsegoBashen)
